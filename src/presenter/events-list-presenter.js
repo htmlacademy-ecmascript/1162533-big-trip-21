@@ -46,7 +46,7 @@ const typesList = Object.values(TRIP_TYPE);
 const TRIP_EVENTS_LIST = [
   {
     dateFrom: '2019-03-18T10:30',
-    dateTo: '2019-03-18T11:0',
+    dateTo: '2019-03-18T11:00',
     destination: 'Amsterdam',
     type: TRIP_TYPE.TAXI,
     price: 20,
@@ -162,7 +162,6 @@ const destinationsList = TRIP_EVENTS_LIST.map(({destination}) => destination).re
   return acc;
 }, []);
 
-
 export default class EventsListPresenter {
   tripEventsListComponent = new TripEventsListView();
 
@@ -226,7 +225,6 @@ export default class EventsListPresenter {
           render(new DestinationOptionView({value: destination}), destinationListElement);
         });
 
-        //TODO: добавить форматирование даты
         const timeFormComponent = new TimeFormView({data: {
           id,
           dateFrom: eventData.dateFrom,
